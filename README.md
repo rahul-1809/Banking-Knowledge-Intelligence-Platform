@@ -30,40 +30,40 @@ BKIP transforms unstructured banking documentation—including **RBI master dire
 
 ```mermaid
 flowchart TD
-    subgraph Client Layer
-        A[User Query] --> B[Streamlit Chat UI / REST Client]
+    subgraph "Client Layer"
+        A["User Query"] --> B["Streamlit Chat UI / REST Client"]
     end
 
-    subgraph API & Safety Layer
-        B --> C[FastAPI Gateway /query]
-        C --> D{NeMo Safety Guardrail}
-        D -- Off-topic / Breach --> E[Policy Blocked Response]
+    subgraph "API & Safety Layer"
+        B --> C["FastAPI Gateway /query"]
+        C --> D{"NeMo Safety Guardrail"}
+        D -- "Off-topic / Breach" --> E["Policy Blocked Response"]
         E --> B
     end
 
-    subgraph Agent Intelligence Layer (LangGraph)
-        D -- Approved --> F[Planner Node]
-        F -- Conversational --> G[Direct Generator Node]
-        F -- Technical Query --> H[Retriever Node]
+    subgraph "Agent Intelligence Layer (LangGraph)"
+        D -- "Approved" --> F["Planner Node"]
+        F -- "Conversational" --> G["Direct Generator Node"]
+        F -- "Technical Query" --> H["Retriever Node"]
         
-        subgraph Two-Stage Retrieval
-            H --> I[(Qdrant Vector DB)]
-            I --> J[FlashRank ONNX Cross-Encoder]
+        subgraph "Two-Stage Retrieval"
+            H --> I[("Qdrant Vector DB")]
+            I --> J["FlashRank ONNX Cross-Encoder"]
         end
         
-        J --> K[Grounded Generator Node]
-        G --> L[(LangGraph State Memory)]
+        J --> K["Grounded Generator Node"]
+        G --> L[("LangGraph State Memory")]
         K --> L
     end
 
-    subgraph LLM & Observability Gateway
-        K --> M[Portkey Gateway / Groq Primary]
-        M -- Failover --> N[Groq Fallback LLM]
-        M -. Tracing .-> O[Pydantic Logfire]
-        M -. Tracing .-> P[LangSmith Engine]
+    subgraph "LLM & Observability Gateway"
+        K --> M["Portkey Gateway / Groq Primary"]
+        M -- "Failover" --> N["Groq Fallback LLM"]
+        M -. "Tracing" .-> O["Pydantic Logfire"]
+        M -. "Tracing" .-> P["LangSmith Engine"]
     end
 
-    L --> Q[Structured JSON Response]
+    L --> Q["Structured JSON Response"]
     Q --> B
 ```
 
