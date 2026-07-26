@@ -82,7 +82,7 @@ def responder_node(state: AgentState) -> dict:
         intent=intent,
         docs_count=len(documents),
         query_preview=query[:80],
-    ):
+    ) as span:
         llm = get_primary_llm()
         callbacks = get_langsmith_callbacks()
         t0 = time.perf_counter()
@@ -110,6 +110,9 @@ def responder_node(state: AgentState) -> dict:
         answer_text = response.content.strip()
         latency_ms = round((time.perf_counter() - t0) * 1000, 1)
 
+        span.set_attribute("response.answer", answer_text)
+        span.set_attribute("response.length", len(answer_text))
+
         thought_process.append("[Responder] Answer generated successfully.")
         logger.info(
             "Responder produced answer (%s chars) intent=%s latency=%.1fms",
@@ -122,6 +125,7 @@ def responder_node(state: AgentState) -> dict:
             "agent.responder.complete",
             intent=intent,
             docs_count=len(documents),
+            answer=answer_text,
             answer_len=len(answer_text),
             latency_ms=latency_ms,
         )

@@ -40,10 +40,17 @@ def get_langsmith_callbacks() -> list[Any]:
     api_key = os.getenv("LANGSMITH_API_KEY") or os.getenv("LANGCHAIN_API_KEY", "")
     tracing_v2 = os.getenv("LANGCHAIN_TRACING_V2", "false").lower() == "true"
     langsmith_tracing = os.getenv("LANGSMITH_TRACING", "false").lower() == "true"
-    project = os.getenv("LANGSMITH_PROJECT") or os.getenv("LANGCHAIN_PROJECT", "bkip")
+    project = (os.getenv("LANGSMITH_PROJECT") or os.getenv("LANGCHAIN_PROJECT", "bkip")).strip('"\'')
 
     if api_key and (tracing_v2 or langsmith_tracing):
         try:
+            os.environ["LANGCHAIN_TRACING_V2"] = "true"
+            os.environ["LANGCHAIN_API_KEY"] = api_key
+            os.environ["LANGCHAIN_PROJECT"] = project
+            os.environ["LANGSMITH_TRACING"] = "true"
+            os.environ["LANGSMITH_API_KEY"] = api_key
+            os.environ["LANGSMITH_PROJECT"] = project
+
             from langsmith import Client  # type: ignore[import-untyped]
             from langchain_core.tracers import LangChainTracer  # type: ignore[import-untyped]
 

@@ -62,7 +62,7 @@ if _ls_key and _ls_tracing:
 from contextlib import asynccontextmanager
 from typing import Any, Optional
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from langchain_core.messages import HumanMessage
 from pydantic import BaseModel
 
@@ -105,7 +105,8 @@ class QueryFilters(BaseModel):
 
 
 class QueryRequest(BaseModel):
-    message: str
+    message: Optional[str] = None
+    q: Optional[str] = None
     thread_id: str
     filters: Optional[QueryFilters] = None
 
@@ -173,13 +174,14 @@ def create_app() -> FastAPI:
           2. Invoke LangGraph: Planner → [Retriever →] Responder.
           3. Return answer, sources, thought_process, blocked=False.
         """
+        user_text = request.message or request.q or ""
         with logfire.span(
             "bkip.query",
             thread_id=request.thread_id,
-            message_len=len(request.message),
+            message_len=len(user_text),
         ):
             # Gate 1: guardrails
-            guard_result = guard(request.message)
+            guard_result = guard(user_text)
             if not guard_result.allowed:
                 logger.warning(
                     "Request blocked | reason=%s thread_id=%s latency=%.1fms",
@@ -207,8 +209,8 @@ def create_app() -> FastAPI:
                 }
 
             initial_state = {
-                "messages": [HumanMessage(content=request.message)],
-                "query": request.message,
+                "messages": [HumanMessage(content=user_text)],
+                "query": user_text,
                 "documents": [],
                 "intent": "",
                 "thought_process": [],
@@ -216,11 +218,15 @@ def create_app() -> FastAPI:
                 "filters": filters_dict,
             }
 
-            config = {"configurable": {"thread_id": request.thread_id}}
+            from app.core.tracing import get_langsmith_callbacks
+            config = {
+                "configurable": {"thread_id": request.thread_id},
+                "callbacks": get_langsmith_callbacks(),
+            }
 
             graph = get_graph()
             try:
-                with logfire.span("bkip.agent.invoke", thread_id=request.thread_id):
+                with logfire.span("bkip.agent.invoke", thread_id=request.thread_id) as invoke_span:
                     final_state = graph.invoke(initial_state, config=config)
             except Exception as exc:
                 logger.exception("Agent graph error: %s", exc)
@@ -251,6 +257,7 @@ def create_app() -> FastAPI:
                 "bkip.query.complete",
                 intent=intent,
                 sources_count=len(sources),
+                answer=answer,
                 answer_len=len(answer),
                 thread_id=request.thread_id,
             )
@@ -261,6 +268,73 @@ def create_app() -> FastAPI:
                 thought_process=final_state.get("thought_process", []),
                 blocked=False,
             )
+
+    # ── POST /ingest ──────────────────────────────────────────────────────────
+
+    @app.post("/ingest", tags=["ingestion"])
+    async def ingest_file(
+        file: UploadFile = File(...),
+        category: Optional[str] = Form(None),
+    ):
+        """Upload and ingest a document (PDF, TXT, DOCX, JSON) into Qdrant vector store."""
+        import shutil
+        import tempfile
+        from app.ingestion.processor import get_qdrant_client, ensure_collection, upsert_records, process_file
+        from app.core.config import get_settings
+
+        with logfire.span("bkip.ingest", file_name=file.filename):
+            try:
+                suffix = _Path(file.filename or "doc.txt").suffix
+                with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
+                    shutil.copyfileobj(file.file, tmp)
+                    tmp_path = _Path(tmp.name)
+
+                data_dir = tmp_path.parent / "uploads"
+                data_dir.mkdir(parents=True, exist_ok=True)
+                target_path = data_dir / (file.filename or "uploaded_doc.txt")
+                shutil.move(str(tmp_path), str(target_path))
+
+                processed_dir = _Path(__file__).resolve().parent.parent / "processed_data"
+                record = process_file(target_path, data_root=data_dir, processed_dir=processed_dir)
+
+                if category and category.strip():
+                    cat_clean = category.strip().upper()
+                    record["metadata"]["category"] = cat_clean
+                    for chunk in record.get("chunks", []):
+                        chunk["category"] = cat_clean
+
+                settings = get_settings()
+                client = get_qdrant_client()
+                ensure_collection(
+                    client,
+                    settings.qdrant_collection_name,
+                    settings.embedding_dimension,
+                    wipe=False,
+                )
+                total_chunks = upsert_records(client, settings.qdrant_collection_name, [record])
+
+                if target_path.exists():
+                    target_path.unlink()
+
+                logfire.info(
+                    "bkip.ingest.success",
+                    file_name=file.filename,
+                    chunks=total_chunks,
+                    doc_id=record["doc_id"],
+                )
+
+                return {
+                    "status": "success",
+                    "file_name": file.filename,
+                    "doc_id": record["doc_id"],
+                    "chunks_ingested": total_chunks,
+                    "category": record["metadata"]["category"],
+                }
+
+            except Exception as exc:
+                logger.exception("Ingestion failed for %s: %s", file.filename, exc)
+                logfire.error("bkip.ingest.error", file_name=file.filename, error=str(exc))
+                raise HTTPException(status_code=500, detail=f"Ingestion failed: {exc}") from exc
 
     return app
 
