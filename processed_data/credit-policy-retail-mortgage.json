@@ -1,0 +1,16 @@
+{
+  "doc_id": "credit-policy-retail-mortgage",
+  "metadata": {
+    "file_name": "credit_policy_retail_mortgage.docx",
+    "category": "CREDIT",
+    "date_added": "2026-07-26T14:18:11.035624+00:00",
+    "doc_id": "credit-policy-retail-mortgage",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/CREDIT/credit_policy_retail_mortgage.docx"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Credit Policy \u2014 Home Loan & LAP Underwriting Manual\n\n1. Loan-to-Value (LTV) Limits\n\nFor home loans up to INR 30 Lakhs, maximum LTV ratio is 90%. For loans between INR 30 Lakhs and 75 Lakhs, maximum LTV is 80%. For loans above 75 Lakhs, maximum LTV is 75%.\n\n2. Fixed Obligation to Income Ratio (FOIR)\n\nMaximum allowable FOIR including proposed housing EMI is capped at 55% for salaried applicants and 60% for self-employed professionals.\n\n3. Title Legal Clearance\n\nMandatory 30-year search report from bank-empanelled advocate and technical valuation report by two independent valuers for property value exceeding INR 1 Crore."
+    }
+  ]
+}

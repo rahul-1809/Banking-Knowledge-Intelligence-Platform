@@ -1,0 +1,20 @@
+Internal SOP – Retail KYC Verification Process
+
+Purpose
+This SOP defines the standard operating procedure for verifying identity and address of retail banking customers during account opening and periodic review.
+
+Scope
+Applicable to all branch staff and digital onboarding teams handling savings, current, and salary accounts.
+
+Procedure
+Step 1: Collect the customer application form and self-attested copies of OVD.
+Step 2: Verify name, photograph, and address against the original document or through digital KYC as permitted.
+Step 3: Capture customer consent for Aadhaar-based verification where used; do not store full Aadhaar number in operational notes.
+Step 4: Enter verified details in the core banking system and assign risk category (low, medium, high).
+Step 5: Route high-risk profiles to the compliance officer for EDD approval before account activation.
+
+Escalation
+Any mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours.
+
+Records
+Maintain verification checklist and audit trail for a minimum of five years.

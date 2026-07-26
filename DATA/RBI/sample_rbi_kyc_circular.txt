@@ -1,0 +1,16 @@
+RBI Master Direction – Know Your Customer (KYC) Norms (Excerpt)
+
+1. Objective
+Regulated entities (REs) shall establish a robust KYC framework to prevent banks from being used for money laundering or terrorist financing activities. Customer identification and verification must be completed before establishing a banking relationship.
+
+2. Customer Due Diligence (CDD)
+REs shall obtain and verify the identity of the customer using reliable, independent source documents or data. For individuals, officially valid documents (OVD) include passport, driving licence, Aadhaar (with consent and masking as applicable), and voter identity card.
+
+3. Periodic Updation
+KYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.
+
+4. Enhanced Due Diligence (EDD)
+Enhanced due diligence measures are mandatory for high-risk customers, politically exposed persons (PEPs), and non-face-to-face customer onboarding. EDD includes obtaining additional information on source of funds and purpose of relationship.
+
+5. Record Keeping
+REs shall maintain KYC documentation and transaction records for at least five years after the business relationship ends or the account is closed, whichever is later.

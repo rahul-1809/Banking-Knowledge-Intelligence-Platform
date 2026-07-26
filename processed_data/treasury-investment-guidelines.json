@@ -1,0 +1,16 @@
+{
+  "doc_id": "treasury-investment-guidelines",
+  "metadata": {
+    "file_name": "treasury_investment_guidelines.docx",
+    "category": "TREASURY",
+    "date_added": "2026-07-26T14:18:11.078473+00:00",
+    "doc_id": "treasury-investment-guidelines",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/TREASURY/treasury_investment_guidelines.docx"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Treasury Policy \u2014 SLR & Non-SLR Investment Operations\n\n1. Statutory Liquidity Ratio (SLR)\n\nMaintain prescribed SLR investments in approved Central and State Government securities as mandated by RBI under Section 24 of the Banking Regulation Act.\n\n2. Non-SLR Investments\n\nInvestments in corporate bonds and commercial papers are restricted to AAA or AA+ rated instruments. Exposure to any single corporate group is capped at 15 percent of capital funds.\n\n3. Mark-to-Market (MTM) Valuation\n\nHeld for Trading (HFT) and Available for Sale (AFS) securities must be revalued on a weekly and monthly basis respectively per RBI valuation norms."
+    }
+  ]
+}

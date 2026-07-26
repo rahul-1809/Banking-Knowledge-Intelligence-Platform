@@ -1,0 +1,16 @@
+{
+  "doc_id": "treasury-alm-liquidity-risk",
+  "metadata": {
+    "file_name": "treasury_alm_liquidity_risk.pdf",
+    "category": "TREASURY",
+    "date_added": "2026-07-26T14:18:11.070853+00:00",
+    "doc_id": "treasury-alm-liquidity-risk",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/TREASURY/treasury_alm_liquidity_risk.pdf"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Treasury Policy \u2014 Asset Liability Management & Liquidity\n Risk\n1. Liquidity Coverage Ratio (LCR)\nThe Bank shall maintain a minimum Liquidity Coverage Ratio (LCR) of 100 percent on an ongoing\nbasis, consisting of unencumbered High Quality Liquid Assets (HQLA).\n2. Structural Liquidity Gaps\nCumulative negative mismatches in time buckets up to 14 days shall not exceed 10 percent of\ncumulative cash outflows in those buckets.\n3. Interest Rate Risk in Banking Book (IRRBB)\nImpact of a +/- 200 basis point parallel interest rate shock on Net Interest Income (NII) shall not exceed\n10 percent of annual NII."
+    }
+  ]
+}

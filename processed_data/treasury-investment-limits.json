@@ -1,0 +1,16 @@
+{
+  "doc_id": "treasury-investment-limits",
+  "metadata": {
+    "file_name": "treasury_investment_limits.json",
+    "category": "TREASURY",
+    "date_added": "2026-07-26T14:18:11.081635+00:00",
+    "doc_id": "treasury-investment-limits",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/TREASURY/treasury_investment_limits.json"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Treasury Operations \u2014 Counterparty & Dealer Exposure Limits\n\nInterbank Money Market Limit\nMaximum overnight call/notice money borrowing limit is capped at 100% of capital funds on a fortnight average basis.\n\nDerivative Counterparty Exposure\nOver-the-Counter (OTC) interest rate swap exposure to non-bank counterparties requires Credit Support Annex (CSA) collateral agreements."
+    }
+  ]
+}

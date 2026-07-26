@@ -1,0 +1,20 @@
+{
+  "doc_id": "sample-credit-policy",
+  "metadata": {
+    "file_name": "sample_credit_policy.txt",
+    "category": "SOP",
+    "date_added": "2026-07-26T14:18:11.059321+00:00",
+    "doc_id": "sample-credit-policy",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/SOP/sample_credit_policy.txt"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Credit Policy \u2013 Personal Loan Underwriting Guidelines (Excerpt)\n\nEligibility\nApplicants must be resident individuals aged 21\u201360 years with a minimum net monthly income of INR 25,000 and a credit bureau score of 700 or above unless approved under exception policy.\n\nDocumentation\nMandatory documents include identity proof, address proof, income proof (salary slips or ITR), and bank statements for the last six months.\n\nDebt Service Coverage\nTotal EMI obligations including the proposed loan must not exceed 50% of net monthly income unless compensating factors are documented and approved by credit committee.\n\nLoan Amount\nMaximum personal loan amount is capped at 24 times net monthly income or INR 25,00,000, whichever is lower, subject to product-specific limits.\n\nApproval Matrix\nLoans up to INR 5,00,000 may be approved by branch credit officer. Amounts above INR 5,00,000 require regional credit head approval. Exceptions require committee review."
+    },
+    {
+      "chunk_index": 1,
+      "text": "Approval Matrix\nLoans up to INR 5,00,000 may be approved by branch credit officer. Amounts above INR 5,00,000 require regional credit head approval. Exceptions require committee review.\n\nProhibited Use\nLoan proceeds must not be used for speculative trading, cryptocurrency investment, or any activity prohibited under internal AML policy."
+    }
+  ]
+}

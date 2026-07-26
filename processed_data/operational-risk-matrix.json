@@ -1,0 +1,16 @@
+{
+  "doc_id": "operational-risk-matrix",
+  "metadata": {
+    "file_name": "operational_risk_matrix.docx",
+    "category": "AUDIT",
+    "date_added": "2026-07-26T14:18:11.016508+00:00",
+    "doc_id": "operational-risk-matrix",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/AUDIT/operational_risk_matrix.docx"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Operational Risk & Internal Control Assessment Matrix\n\n1. Risk Assessment Framework\n\nIdentifies Key Risk Indicators (KRIs) across branch operations, IT systems, clearing operations, and credit administration.\n\n2. Loss Event Data Collection\n\nAll operational risk losses exceeding INR 50,000 must be recorded in the Bank's Loss Event Database within 5 working days.\n\n3. Control Effectiveness Testing\n\nQuarterly testing of key operational controls by internal risk managers to ensure compliance with Basel III Operational Risk guidelines."
+    }
+  ]
+}

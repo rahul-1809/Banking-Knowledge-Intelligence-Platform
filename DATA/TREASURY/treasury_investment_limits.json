@@ -1,0 +1,17 @@
+{
+  "title": "Treasury Operations \u2014 Counterparty & Dealer Exposure Limits",
+  "metadata": {
+    "category": "TREASURY",
+    "effective_date": "2024-04-01"
+  },
+  "sections": [
+    {
+      "heading": "Interbank Money Market Limit",
+      "body": "Maximum overnight call/notice money borrowing limit is capped at 100% of capital funds on a fortnight average basis."
+    },
+    {
+      "heading": "Derivative Counterparty Exposure",
+      "body": "Over-the-Counter (OTC) interest rate swap exposure to non-bank counterparties requires Credit Support Annex (CSA) collateral agreements."
+    }
+  ]
+}

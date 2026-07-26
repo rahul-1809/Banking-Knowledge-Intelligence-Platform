@@ -1,0 +1,16 @@
+{
+  "doc_id": "sop-high-risk-customer-edd",
+  "metadata": {
+    "file_name": "sop_high_risk_customer_edd.docx",
+    "category": "SOP",
+    "date_added": "2026-07-26T14:18:11.059883+00:00",
+    "doc_id": "sop-high-risk-customer-edd",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/SOP/sop_high_risk_customer_edd.docx"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Internal SOP \u2014 Enhanced Due Diligence (EDD) Approval Process\n\n1. Scope\n\nMandatory procedure for onboarding Politically Exposed Persons (PEPs), high-net-worth individuals from high-risk jurisdictions, and non-face-to-face accounts.\n\n2. EDD Requirements\n\nStaff must obtain verified proof of source of wealth, source of funds, senior management approval, and conduct web screening against sanctions lists.\n\n3. Escalation & Approval Matrix\n\nHigh-risk account activation requires written clearance from the Branch Compliance Officer and Regional AML Head."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "doc_id": "fraud-prevention-escalation",
+  "metadata": {
+    "file_name": "fraud_prevention_escalation.docx",
+    "category": "COMPLIANCE",
+    "date_added": "2026-07-26T14:18:11.031702+00:00",
+    "doc_id": "fraud-prevention-escalation",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/COMPLIANCE/fraud_prevention_escalation.docx"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Compliance Framework \u2014 Internal & External Fraud Prevention\n\n1. Early Warning Signals (EWS)\n\nBranches must monitor red flag indicators such as frequent cheque bounces, unexplained cash deposits, unauthorized system logons, and unexpected collateral substitutions.\n\n2. Incident Escalation Timeline\n\nAny confirmed or suspected fraud exceeding INR 10 Lakhs must be reported to the Chief Vigilance Officer (CVO) within 24 hours and to the RBI Fraud Monitoring Cell within 3 weeks.\n\n3. Whistleblower Protection\n\nEmployees reporting suspicious activities in good faith are protected from retaliation under the Bank's Whistleblower Policy."
+    }
+  ]
+}

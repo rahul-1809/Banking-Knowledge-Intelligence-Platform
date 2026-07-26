@@ -1,0 +1,16 @@
+{
+  "doc_id": "rbi-master-direction-kyc",
+  "metadata": {
+    "file_name": "rbi_master_direction_kyc.pdf",
+    "category": "RBI",
+    "date_added": "2026-07-26T14:18:11.047980+00:00",
+    "doc_id": "rbi-master-direction-kyc",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/RBI/rbi_master_direction_kyc.pdf"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "RBI Master Direction \u2014 Know Your Customer (KYC) Norms\n 2024\n1. Framework & Scope\nRegulated entities (REs) must implement a robust KYC policy covering Customer Acceptance, Risk\nCategorisation, and Continuous Transaction Monitoring.\n2. Customer Due Diligence (CDD)\nFor individual customers, officially valid documents (OVD) accepted include Passport, Driving Licence,\nProof of Possession of Aadhaar, Voter Identity Card, and NREGA job card.\n3. Periodic KYC Updation\nKYC records shall be updated at least once every 2 years for high-risk customers, 8 years for\nmedium-risk, and 10 years for low-risk customers."
+    }
+  ]
+}

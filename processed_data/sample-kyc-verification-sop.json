@@ -1,0 +1,20 @@
+{
+  "doc_id": "sample-kyc-verification-sop",
+  "metadata": {
+    "file_name": "sample_kyc_verification_sop.txt",
+    "category": "SOP",
+    "date_added": "2026-07-26T14:18:11.059676+00:00",
+    "doc_id": "sample-kyc-verification-sop",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/SOP/sample_kyc_verification_sop.txt"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Internal SOP \u2013 Retail KYC Verification Process\n\nPurpose\nThis SOP defines the standard operating procedure for verifying identity and address of retail banking customers during account opening and periodic review.\n\nScope\nApplicable to all branch staff and digital onboarding teams handling savings, current, and salary accounts.\n\nProcedure\nStep 1: Collect the customer application form and self-attested copies of OVD.\nStep 2: Verify name, photograph, and address against the original document or through digital KYC as permitted.\nStep 3: Capture customer consent for Aadhaar-based verification where used; do not store full Aadhaar number in operational notes.\nStep 4: Enter verified details in the core banking system and assign risk category (low, medium, high).\nStep 5: Route high-risk profiles to the compliance officer for EDD approval before account activation.\n\nEscalation\nAny mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours."
+    },
+    {
+      "chunk_index": 1,
+      "text": "Escalation\nAny mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours.\n\nRecords\nMaintain verification checklist and audit trail for a minimum of five years."
+    }
+  ]
+}

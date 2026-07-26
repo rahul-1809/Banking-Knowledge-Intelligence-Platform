@@ -1,0 +1,7 @@
+Internal Audit — Branch Operations Quick Inspection Checklist
+
+Vault & Cash Management
+Verify dual key ownership, daily cash register reconciliation, and alarm system testing logs.
+
+Dormant Accounts
+Ensure customer presence or written request along with fresh KYC documentation before reactivating dormant accounts.

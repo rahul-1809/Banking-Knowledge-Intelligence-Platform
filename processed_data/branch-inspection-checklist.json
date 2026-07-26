@@ -1,0 +1,16 @@
+{
+  "doc_id": "branch-inspection-checklist",
+  "metadata": {
+    "file_name": "branch_inspection_checklist.txt",
+    "category": "AUDIT",
+    "date_added": "2026-07-26T14:18:11.007452+00:00",
+    "doc_id": "branch-inspection-checklist",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/AUDIT/branch_inspection_checklist.txt"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Internal Audit \u2014 Branch Operations Quick Inspection Checklist\n\nVault & Cash Management\nVerify dual key ownership, daily cash register reconciliation, and alarm system testing logs.\n\nDormant Accounts\nEnsure customer presence or written request along with fresh KYC documentation before reactivating dormant accounts."
+    }
+  ]
+}

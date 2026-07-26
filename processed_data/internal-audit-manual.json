@@ -1,0 +1,16 @@
+{
+  "doc_id": "internal-audit-manual",
+  "metadata": {
+    "file_name": "internal_audit_manual.pdf",
+    "category": "AUDIT",
+    "date_added": "2026-07-26T14:18:11.008330+00:00",
+    "doc_id": "internal-audit-manual",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/AUDIT/internal_audit_manual.pdf"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Internal Audit Policy \u2014 Risk-Based Branch Inspection\n Manual\n1. Audit Frequency & Rating\nBranches are audited under Risk-Based Internal Audit (RBIA) methodology every 12 to 18 months\nbased on operational risk categorization (High, Medium, Low).\n2. Key Checkpoints\nInspect cash vault double-custody records, loan file security documentation, dormant account\nreactivation approvals, and KYC compliance samples.\n3. Compliance & Rectification\nBranch managers must rectify high-risk audit observations within 30 days of report submission.\nUnresolved items are escalated to the Audit Committee of the Board (ACB)."
+    }
+  ]
+}

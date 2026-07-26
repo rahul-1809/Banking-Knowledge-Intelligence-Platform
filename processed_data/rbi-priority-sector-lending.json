@@ -1,0 +1,16 @@
+{
+  "doc_id": "rbi-priority-sector-lending",
+  "metadata": {
+    "file_name": "rbi_priority_sector_lending.docx",
+    "category": "RBI",
+    "date_added": "2026-07-26T14:18:11.055521+00:00",
+    "doc_id": "rbi-priority-sector-lending",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/RBI/rbi_priority_sector_lending.docx"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "RBI Master Circular \u2014 Priority Sector Lending (PSL) Targets\n\n1. Overall Target\n\nDomestic commercial banks shall achieve an overall Priority Sector Lending target of 40 percent of Adjusted Net Bank Credit (ANBC) or Credit Equivalent Amount of Off-Balance Sheet Exposure (CEOBE), whichever is higher.\n\n2. Sub-targets for Agriculture & MSME\n\nWithin the 40 percent target, 18 percent is allocated for Agriculture (with 10 percent for Small & Marginal Farmers) and 7.5 percent for Micro Enterprises.\n\n3. Non-compliance Penalty\n\nShortfalls in achieving PSL targets shall be deposited into the Rural Infrastructure Development Fund (RIDF) established with NABARD or specified funds with SIDBI/NHB."
+    }
+  ]
+}

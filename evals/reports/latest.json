@@ -1,0 +1,388 @@
+{
+  "timestamp": "2026-07-25 11:15:25",
+  "total_questions": 15,
+  "metrics": {
+    "faithfulness": 0.6933,
+    "answer_relevancy": 0.6333,
+    "context_precision": 0.6867,
+    "context_recall": 0.5733,
+    "overall_score": 0.6467
+  },
+  "average_latency_ms": 14454.7,
+  "cases": [
+    {
+      "id": "eval-001",
+      "question": "What are the officially valid documents (OVD) accepted for individual customer identification under RBI KYC norms?",
+      "ground_truth": "For individual customers, officially valid documents (OVD) include passport, driving licence, Aadhaar (with consent and masking as applicable), and voter identity card.",
+      "answer": "According to the RBI Master Direction, the officially valid documents (OVD) accepted for individual customer identification under KYC norms include: \n1. Passport, \n2. Driving licence, \n3. Aadhaar (with consent and masking as applicable), and \n4. Voter identity card. \n[Source: sample_rbi_kyc_circular.txt, Chunk 0]",
+      "retrieved_contexts": [
+        "RBI Master Direction \u2013 Know Your Customer (KYC) Norms (Excerpt)\n\n1. Objective\nRegulated entities (REs) shall establish a robust KYC framework to prevent banks from being used for money laundering or terrorist financing activities. Customer identification and verification must be completed before establishing a banking relationship.\n\n2. Customer Due Diligence (CDD)\nREs shall obtain and verify the identity of the customer using reliable, independent source documents or data. For individuals, officially valid documents (OVD) include passport, driving licence, Aadhaar (with consent and masking as applicable), and voter identity card.\n\n3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.",
+        "Internal SOP \u2013 Retail KYC Verification Process\n\nPurpose\nThis SOP defines the standard operating procedure for verifying identity and address of retail banking customers during account opening and periodic review.\n\nScope\nApplicable to all branch staff and digital onboarding teams handling savings, current, and salary accounts.\n\nProcedure\nStep 1: Collect the customer application form and self-attested copies of OVD.\nStep 2: Verify name, photograph, and address against the original document or through digital KYC as permitted.\nStep 3: Capture customer consent for Aadhaar-based verification where used; do not store full Aadhaar number in operational notes.\nStep 4: Enter verified details in the core banking system and assign risk category (low, medium, high).\nStep 5: Route high-risk profiles to the compliance officer for EDD approval before account activation.\n\nEscalation\nAny mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours.",
+        "3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.\n\n4. Enhanced Due Diligence (EDD)\nEnhanced due diligence measures are mandatory for high-risk customers, politically exposed persons (PEPs), and non-face-to-face customer onboarding. EDD includes obtaining additional information on source of funds and purpose of relationship.\n\n5. Record Keeping\nREs shall maintain KYC documentation and transaction records for at least five years after the business relationship ends or the account is closed, whichever is later.",
+        "Credit Policy \u2013 Personal Loan Underwriting Guidelines (Excerpt)\n\nEligibility\nApplicants must be resident individuals aged 21\u201360 years with a minimum net monthly income of INR 25,000 and a credit bureau score of 700 or above unless approved under exception policy.\n\nDocumentation\nMandatory documents include identity proof, address proof, income proof (salary slips or ITR), and bank statements for the last six months.\n\nDebt Service Coverage\nTotal EMI obligations including the proposed loan must not exceed 50% of net monthly income unless compensating factors are documented and approved by credit committee.\n\nLoan Amount\nMaximum personal loan amount is capped at 24 times net monthly income or INR 25,00,000, whichever is lower, subject to product-specific limits.\n\nApproval Matrix\nLoans up to INR 5,00,000 may be approved by branch credit officer. Amounts above INR 5,00,000 require regional credit head approval. Exceptions require committee review.",
+        "Escalation\nAny mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours.\n\nRecords\nMaintain verification checklist and audit trail for a minimum of five years."
+      ],
+      "retrieved_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "expected_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "category": "RBI",
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "overall_score": 1.0
+      },
+      "latency_ms": 45873.4
+    },
+    {
+      "id": "eval-002",
+      "question": "What is the periodic KYC updation frequency for low-risk and high-risk banking customers?",
+      "ground_truth": "KYC records must be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers.",
+      "answer": "The periodic KYC updation frequency is as follows: \n- Low-risk customers: at least once every 10 years\n- High-risk customers: at least once every 8 years\n[Source: sample_rbi_kyc_circular.txt, Chunk 1]",
+      "retrieved_contexts": [
+        "3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.\n\n4. Enhanced Due Diligence (EDD)\nEnhanced due diligence measures are mandatory for high-risk customers, politically exposed persons (PEPs), and non-face-to-face customer onboarding. EDD includes obtaining additional information on source of funds and purpose of relationship.\n\n5. Record Keeping\nREs shall maintain KYC documentation and transaction records for at least five years after the business relationship ends or the account is closed, whichever is later.",
+        "RBI Master Direction \u2013 Know Your Customer (KYC) Norms (Excerpt)\n\n1. Objective\nRegulated entities (REs) shall establish a robust KYC framework to prevent banks from being used for money laundering or terrorist financing activities. Customer identification and verification must be completed before establishing a banking relationship.\n\n2. Customer Due Diligence (CDD)\nREs shall obtain and verify the identity of the customer using reliable, independent source documents or data. For individuals, officially valid documents (OVD) include passport, driving licence, Aadhaar (with consent and masking as applicable), and voter identity card.\n\n3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.",
+        "Internal SOP \u2013 Retail KYC Verification Process\n\nPurpose\nThis SOP defines the standard operating procedure for verifying identity and address of retail banking customers during account opening and periodic review.\n\nScope\nApplicable to all branch staff and digital onboarding teams handling savings, current, and salary accounts.\n\nProcedure\nStep 1: Collect the customer application form and self-attested copies of OVD.\nStep 2: Verify name, photograph, and address against the original document or through digital KYC as permitted.\nStep 3: Capture customer consent for Aadhaar-based verification where used; do not store full Aadhaar number in operational notes.\nStep 4: Enter verified details in the core banking system and assign risk category (low, medium, high).\nStep 5: Route high-risk profiles to the compliance officer for EDD approval before account activation.\n\nEscalation\nAny mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours.",
+        "Escalation\nAny mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours.\n\nRecords\nMaintain verification checklist and audit trail for a minimum of five years.",
+        "Approval Matrix\nLoans up to INR 5,00,000 may be approved by branch credit officer. Amounts above INR 5,00,000 require regional credit head approval. Exceptions require committee review.\n\nProhibited Use\nLoan proceeds must not be used for speculative trading, cryptocurrency investment, or any activity prohibited under internal AML policy."
+      ],
+      "retrieved_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_credit_policy.txt"
+      ],
+      "expected_sources": [
+        "sample_rbi_kyc_circular.txt"
+      ],
+      "category": "RBI",
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "overall_score": 1.0
+      },
+      "latency_ms": 11473.5
+    },
+    {
+      "id": "eval-003",
+      "question": "What enhanced due diligence (EDD) measures are required for high-risk customers and politically exposed persons?",
+      "ground_truth": "Enhanced due diligence (EDD) is mandatory for high-risk customers, politically exposed persons (PEPs), and non-face-to-face onboarding. EDD includes obtaining additional information on source of funds and purpose of relationship.",
+      "answer": "For high-risk customers and politically exposed persons (PEPs), enhanced due diligence (EDD) measures are mandatory. These measures include obtaining additional information on the source of funds and the purpose of the relationship. [Source: sample_rbi_kyc_circular.txt, Chunk 1] \n\nAdditionally, EDD is also required for non-face-to-face customer onboarding. [Source: sample_rbi_kyc_circular.txt, Chunk 1] \n\nHowever, the context does not provide further details on the specific EDD measures. [Source: sample_rbi_kyc_circular.txt, Chunk 0] and [Source: sample_kyc_verification_sop.txt, Chunk 0] provide general information on KYC and verification processes but do not elaborate on EDD for high-risk customers and PEPs.",
+      "retrieved_contexts": [
+        "3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.\n\n4. Enhanced Due Diligence (EDD)\nEnhanced due diligence measures are mandatory for high-risk customers, politically exposed persons (PEPs), and non-face-to-face customer onboarding. EDD includes obtaining additional information on source of funds and purpose of relationship.\n\n5. Record Keeping\nREs shall maintain KYC documentation and transaction records for at least five years after the business relationship ends or the account is closed, whichever is later.",
+        "RBI Master Direction \u2013 Know Your Customer (KYC) Norms (Excerpt)\n\n1. Objective\nRegulated entities (REs) shall establish a robust KYC framework to prevent banks from being used for money laundering or terrorist financing activities. Customer identification and verification must be completed before establishing a banking relationship.\n\n2. Customer Due Diligence (CDD)\nREs shall obtain and verify the identity of the customer using reliable, independent source documents or data. For individuals, officially valid documents (OVD) include passport, driving licence, Aadhaar (with consent and masking as applicable), and voter identity card.\n\n3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.",
+        "Internal SOP \u2013 Retail KYC Verification Process\n\nPurpose\nThis SOP defines the standard operating procedure for verifying identity and address of retail banking customers during account opening and periodic review.\n\nScope\nApplicable to all branch staff and digital onboarding teams handling savings, current, and salary accounts.\n\nProcedure\nStep 1: Collect the customer application form and self-attested copies of OVD.\nStep 2: Verify name, photograph, and address against the original document or through digital KYC as permitted.\nStep 3: Capture customer consent for Aadhaar-based verification where used; do not store full Aadhaar number in operational notes.\nStep 4: Enter verified details in the core banking system and assign risk category (low, medium, high).\nStep 5: Route high-risk profiles to the compliance officer for EDD approval before account activation.\n\nEscalation\nAny mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours.",
+        "Escalation\nAny mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours.\n\nRecords\nMaintain verification checklist and audit trail for a minimum of five years.",
+        "Credit Policy \u2013 Personal Loan Underwriting Guidelines (Excerpt)\n\nEligibility\nApplicants must be resident individuals aged 21\u201360 years with a minimum net monthly income of INR 25,000 and a credit bureau score of 700 or above unless approved under exception policy.\n\nDocumentation\nMandatory documents include identity proof, address proof, income proof (salary slips or ITR), and bank statements for the last six months.\n\nDebt Service Coverage\nTotal EMI obligations including the proposed loan must not exceed 50% of net monthly income unless compensating factors are documented and approved by credit committee.\n\nLoan Amount\nMaximum personal loan amount is capped at 24 times net monthly income or INR 25,00,000, whichever is lower, subject to product-specific limits.\n\nApproval Matrix\nLoans up to INR 5,00,000 may be approved by branch credit officer. Amounts above INR 5,00,000 require regional credit head approval. Exceptions require committee review."
+      ],
+      "retrieved_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_credit_policy.txt"
+      ],
+      "expected_sources": [
+        "sample_rbi_kyc_circular.txt"
+      ],
+      "category": "RBI",
+      "scores": {
+        "faithfulness": 0.9,
+        "answer_relevancy": 0.9,
+        "context_precision": 0.9,
+        "context_recall": 0.9,
+        "overall_score": 0.9
+      },
+      "latency_ms": 11715.0
+    },
+    {
+      "id": "eval-004",
+      "question": "How long must regulated entities maintain KYC documentation and transaction records?",
+      "ground_truth": "Regulated entities shall maintain KYC documentation and transaction records for at least five years after the business relationship ends or the account is closed, whichever is later.",
+      "answer": "Regulated entities (REs) must maintain KYC documentation and transaction records for at least five years after the business relationship ends or the account is closed, whichever is later. [Source: sample_rbi_kyc_circular.txt, Chunk 1]",
+      "retrieved_contexts": [
+        "3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.\n\n4. Enhanced Due Diligence (EDD)\nEnhanced due diligence measures are mandatory for high-risk customers, politically exposed persons (PEPs), and non-face-to-face customer onboarding. EDD includes obtaining additional information on source of funds and purpose of relationship.\n\n5. Record Keeping\nREs shall maintain KYC documentation and transaction records for at least five years after the business relationship ends or the account is closed, whichever is later.",
+        "RBI Master Direction \u2013 Know Your Customer (KYC) Norms (Excerpt)\n\n1. Objective\nRegulated entities (REs) shall establish a robust KYC framework to prevent banks from being used for money laundering or terrorist financing activities. Customer identification and verification must be completed before establishing a banking relationship.\n\n2. Customer Due Diligence (CDD)\nREs shall obtain and verify the identity of the customer using reliable, independent source documents or data. For individuals, officially valid documents (OVD) include passport, driving licence, Aadhaar (with consent and masking as applicable), and voter identity card.\n\n3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.",
+        "Escalation\nAny mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours.\n\nRecords\nMaintain verification checklist and audit trail for a minimum of five years.",
+        "Internal SOP \u2013 Retail KYC Verification Process\n\nPurpose\nThis SOP defines the standard operating procedure for verifying identity and address of retail banking customers during account opening and periodic review.\n\nScope\nApplicable to all branch staff and digital onboarding teams handling savings, current, and salary accounts.\n\nProcedure\nStep 1: Collect the customer application form and self-attested copies of OVD.\nStep 2: Verify name, photograph, and address against the original document or through digital KYC as permitted.\nStep 3: Capture customer consent for Aadhaar-based verification where used; do not store full Aadhaar number in operational notes.\nStep 4: Enter verified details in the core banking system and assign risk category (low, medium, high).\nStep 5: Route high-risk profiles to the compliance officer for EDD approval before account activation.\n\nEscalation\nAny mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours.",
+        "Credit Policy \u2013 Personal Loan Underwriting Guidelines (Excerpt)\n\nEligibility\nApplicants must be resident individuals aged 21\u201360 years with a minimum net monthly income of INR 25,000 and a credit bureau score of 700 or above unless approved under exception policy.\n\nDocumentation\nMandatory documents include identity proof, address proof, income proof (salary slips or ITR), and bank statements for the last six months.\n\nDebt Service Coverage\nTotal EMI obligations including the proposed loan must not exceed 50% of net monthly income unless compensating factors are documented and approved by credit committee.\n\nLoan Amount\nMaximum personal loan amount is capped at 24 times net monthly income or INR 25,00,000, whichever is lower, subject to product-specific limits.\n\nApproval Matrix\nLoans up to INR 5,00,000 may be approved by branch credit officer. Amounts above INR 5,00,000 require regional credit head approval. Exceptions require committee review."
+      ],
+      "retrieved_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_credit_policy.txt"
+      ],
+      "expected_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "category": "RBI",
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "context_precision": 0.9,
+        "context_recall": 1.0,
+        "overall_score": 0.975
+      },
+      "latency_ms": 14418.0
+    },
+    {
+      "id": "eval-005",
+      "question": "What are the eligibility criteria for a personal loan including age, income, and credit score?",
+      "ground_truth": "Applicants must be resident individuals aged 21\u201360 years with a minimum net monthly income of INR 25,000 and a credit bureau score of 700 or above.",
+      "answer": "The eligibility criteria for a personal loan include: \n1. Age: Applicants must be resident individuals aged 21\u201360 years.\n2. Income: A minimum net monthly income of INR 25,000.\n3. Credit Score: A credit bureau score of 700 or above, unless approved under exception policy.\n[Source: sample_credit_policy.txt, Chunk 0]",
+      "retrieved_contexts": [
+        "Credit Policy \u2013 Personal Loan Underwriting Guidelines (Excerpt)\n\nEligibility\nApplicants must be resident individuals aged 21\u201360 years with a minimum net monthly income of INR 25,000 and a credit bureau score of 700 or above unless approved under exception policy.\n\nDocumentation\nMandatory documents include identity proof, address proof, income proof (salary slips or ITR), and bank statements for the last six months.\n\nDebt Service Coverage\nTotal EMI obligations including the proposed loan must not exceed 50% of net monthly income unless compensating factors are documented and approved by credit committee.\n\nLoan Amount\nMaximum personal loan amount is capped at 24 times net monthly income or INR 25,00,000, whichever is lower, subject to product-specific limits.\n\nApproval Matrix\nLoans up to INR 5,00,000 may be approved by branch credit officer. Amounts above INR 5,00,000 require regional credit head approval. Exceptions require committee review.",
+        "Approval Matrix\nLoans up to INR 5,00,000 may be approved by branch credit officer. Amounts above INR 5,00,000 require regional credit head approval. Exceptions require committee review.\n\nProhibited Use\nLoan proceeds must not be used for speculative trading, cryptocurrency investment, or any activity prohibited under internal AML policy.",
+        "RBI Master Direction \u2013 Know Your Customer (KYC) Norms (Excerpt)\n\n1. Objective\nRegulated entities (REs) shall establish a robust KYC framework to prevent banks from being used for money laundering or terrorist financing activities. Customer identification and verification must be completed before establishing a banking relationship.\n\n2. Customer Due Diligence (CDD)\nREs shall obtain and verify the identity of the customer using reliable, independent source documents or data. For individuals, officially valid documents (OVD) include passport, driving licence, Aadhaar (with consent and masking as applicable), and voter identity card.\n\n3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.",
+        "Escalation\nAny mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours.\n\nRecords\nMaintain verification checklist and audit trail for a minimum of five years.",
+        "3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.\n\n4. Enhanced Due Diligence (EDD)\nEnhanced due diligence measures are mandatory for high-risk customers, politically exposed persons (PEPs), and non-face-to-face customer onboarding. EDD includes obtaining additional information on source of funds and purpose of relationship.\n\n5. Record Keeping\nREs shall maintain KYC documentation and transaction records for at least five years after the business relationship ends or the account is closed, whichever is later."
+      ],
+      "retrieved_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt"
+      ],
+      "expected_sources": [
+        "sample_credit_policy.txt"
+      ],
+      "category": "SOP",
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "overall_score": 1.0
+      },
+      "latency_ms": 2097.7
+    },
+    {
+      "id": "eval-006",
+      "question": "What is the maximum debt service coverage ratio (EMI to income limit) for personal loan underwriting?",
+      "ground_truth": "Total EMI obligations including the proposed loan must not exceed 50% of net monthly income unless compensating factors are documented and approved by the credit committee.",
+      "answer": "The maximum debt service coverage ratio for personal loan underwriting is 50% of the net monthly income, unless compensating factors are documented and approved by the credit committee. [Source: sample_credit_policy.txt, Chunk 0]",
+      "retrieved_contexts": [
+        "Credit Policy \u2013 Personal Loan Underwriting Guidelines (Excerpt)\n\nEligibility\nApplicants must be resident individuals aged 21\u201360 years with a minimum net monthly income of INR 25,000 and a credit bureau score of 700 or above unless approved under exception policy.\n\nDocumentation\nMandatory documents include identity proof, address proof, income proof (salary slips or ITR), and bank statements for the last six months.\n\nDebt Service Coverage\nTotal EMI obligations including the proposed loan must not exceed 50% of net monthly income unless compensating factors are documented and approved by credit committee.\n\nLoan Amount\nMaximum personal loan amount is capped at 24 times net monthly income or INR 25,00,000, whichever is lower, subject to product-specific limits.\n\nApproval Matrix\nLoans up to INR 5,00,000 may be approved by branch credit officer. Amounts above INR 5,00,000 require regional credit head approval. Exceptions require committee review.",
+        "Approval Matrix\nLoans up to INR 5,00,000 may be approved by branch credit officer. Amounts above INR 5,00,000 require regional credit head approval. Exceptions require committee review.\n\nProhibited Use\nLoan proceeds must not be used for speculative trading, cryptocurrency investment, or any activity prohibited under internal AML policy.",
+        "3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.\n\n4. Enhanced Due Diligence (EDD)\nEnhanced due diligence measures are mandatory for high-risk customers, politically exposed persons (PEPs), and non-face-to-face customer onboarding. EDD includes obtaining additional information on source of funds and purpose of relationship.\n\n5. Record Keeping\nREs shall maintain KYC documentation and transaction records for at least five years after the business relationship ends or the account is closed, whichever is later.",
+        "RBI Master Direction \u2013 Know Your Customer (KYC) Norms (Excerpt)\n\n1. Objective\nRegulated entities (REs) shall establish a robust KYC framework to prevent banks from being used for money laundering or terrorist financing activities. Customer identification and verification must be completed before establishing a banking relationship.\n\n2. Customer Due Diligence (CDD)\nREs shall obtain and verify the identity of the customer using reliable, independent source documents or data. For individuals, officially valid documents (OVD) include passport, driving licence, Aadhaar (with consent and masking as applicable), and voter identity card.\n\n3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.",
+        "Escalation\nAny mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours.\n\nRecords\nMaintain verification checklist and audit trail for a minimum of five years."
+      ],
+      "retrieved_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "expected_sources": [
+        "sample_credit_policy.txt"
+      ],
+      "category": "SOP",
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 1.0,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "overall_score": 1.0
+      },
+      "latency_ms": 11719.5
+    },
+    {
+      "id": "eval-007",
+      "question": "What is the maximum loan amount cap for personal loans relative to monthly income?",
+      "ground_truth": "The maximum personal loan amount is capped at 24 times net monthly income or INR 25,00,000, whichever is lower.",
+      "answer": "",
+      "retrieved_contexts": [],
+      "retrieved_sources": [],
+      "expected_sources": [
+        "sample_credit_policy.txt"
+      ],
+      "category": "SOP",
+      "scores": {
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.4,
+        "context_precision": 0.5,
+        "context_recall": 0.3,
+        "overall_score": 0.425
+      },
+      "latency_ms": 5800.4
+    },
+    {
+      "id": "eval-008",
+      "question": "Who has approval authority for personal loans above INR 5,00,000?",
+      "ground_truth": "Loans up to INR 5,00,000 may be approved by the branch credit officer. Amounts above INR 5,00,000 require regional credit head approval, while exceptions require committee review.",
+      "answer": "",
+      "retrieved_contexts": [],
+      "retrieved_sources": [],
+      "expected_sources": [
+        "sample_credit_policy.txt"
+      ],
+      "category": "SOP",
+      "scores": {
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.4,
+        "context_precision": 0.5,
+        "context_recall": 0.3,
+        "overall_score": 0.425
+      },
+      "latency_ms": 11778.7
+    },
+    {
+      "id": "eval-009",
+      "question": "What activities are prohibited regarding the use of personal loan proceeds?",
+      "ground_truth": "Loan proceeds must not be used for speculative trading, cryptocurrency investment, or any activity prohibited under internal AML policy.",
+      "answer": "",
+      "retrieved_contexts": [],
+      "retrieved_sources": [],
+      "expected_sources": [
+        "sample_credit_policy.txt"
+      ],
+      "category": "SOP",
+      "scores": {
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.4,
+        "context_precision": 0.5,
+        "context_recall": 0.3,
+        "overall_score": 0.425
+      },
+      "latency_ms": 7315.8
+    },
+    {
+      "id": "eval-0010",
+      "question": "What is the internal SOP procedure for handling Aadhaar details during customer verification?",
+      "ground_truth": "Branch staff must capture customer consent for Aadhaar-based verification where used, and staff must not store full Aadhaar numbers in operational notes.",
+      "answer": "",
+      "retrieved_contexts": [],
+      "retrieved_sources": [],
+      "expected_sources": [
+        "sample_kyc_verification_sop.txt"
+      ],
+      "category": "SOP",
+      "scores": {
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.4,
+        "context_precision": 0.5,
+        "context_recall": 0.3,
+        "overall_score": 0.425
+      },
+      "latency_ms": 14022.7
+    },
+    {
+      "id": "eval-0011",
+      "question": "What is the internal escalation timeframe and process when suspected forged documents or PEP indicators are identified?",
+      "ground_truth": "Any mismatch in identity details, suspected forged documents, or PEP indicators must be escalated to the branch compliance officer within 24 hours.",
+      "answer": "",
+      "retrieved_contexts": [],
+      "retrieved_sources": [],
+      "expected_sources": [
+        "sample_kyc_verification_sop.txt"
+      ],
+      "category": "SOP",
+      "scores": {
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.4,
+        "context_precision": 0.5,
+        "context_recall": 0.3,
+        "overall_score": 0.425
+      },
+      "latency_ms": 4108.2
+    },
+    {
+      "id": "eval-0012",
+      "question": "What mandatory financial documents are required to apply for a personal loan?",
+      "ground_truth": "Mandatory documents include identity proof, address proof, income proof (salary slips or ITR), and bank statements for the last six months.",
+      "answer": "",
+      "retrieved_contexts": [],
+      "retrieved_sources": [],
+      "expected_sources": [
+        "sample_credit_policy.txt"
+      ],
+      "category": "SOP",
+      "scores": {
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.4,
+        "context_precision": 0.5,
+        "context_recall": 0.3,
+        "overall_score": 0.425
+      },
+      "latency_ms": 9733.2
+    },
+    {
+      "id": "eval-0013",
+      "question": "Who must approve high-risk customer profiles before account activation according to the internal SOP?",
+      "ground_truth": "High-risk profiles must be routed to the compliance officer for EDD approval before account activation.",
+      "answer": "",
+      "retrieved_contexts": [],
+      "retrieved_sources": [],
+      "expected_sources": [
+        "sample_kyc_verification_sop.txt"
+      ],
+      "category": "SOP",
+      "scores": {
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.4,
+        "context_precision": 0.5,
+        "context_recall": 0.3,
+        "overall_score": 0.425
+      },
+      "latency_ms": 10883.0
+    },
+    {
+      "id": "eval-0014",
+      "question": "What is the core objective of the RBI KYC framework for regulated entities?",
+      "ground_truth": "Regulated entities shall establish a robust KYC framework to prevent banks from being used for money laundering or terrorist financing activities.",
+      "answer": "",
+      "retrieved_contexts": [],
+      "retrieved_sources": [],
+      "expected_sources": [
+        "sample_rbi_kyc_circular.txt"
+      ],
+      "category": "RBI",
+      "scores": {
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.4,
+        "context_precision": 0.5,
+        "context_recall": 0.3,
+        "overall_score": 0.425
+      },
+      "latency_ms": 41760.5
+    },
+    {
+      "id": "eval-0015",
+      "question": "How long must branch staff maintain the verification checklist and audit trail for retail customer onboarding?",
+      "ground_truth": "Branch staff must maintain the verification checklist and audit trail for a minimum of five years.",
+      "answer": "",
+      "retrieved_contexts": [],
+      "retrieved_sources": [],
+      "expected_sources": [
+        "sample_kyc_verification_sop.txt"
+      ],
+      "category": "SOP",
+      "scores": {
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.4,
+        "context_precision": 0.5,
+        "context_recall": 0.3,
+        "overall_score": 0.425
+      },
+      "latency_ms": 14121.0
+    }
+  ]
+}

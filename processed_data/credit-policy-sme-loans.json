@@ -1,0 +1,16 @@
+{
+  "doc_id": "credit-policy-sme-loans",
+  "metadata": {
+    "file_name": "credit_policy_sme_loans.pdf",
+    "category": "CREDIT",
+    "date_added": "2026-07-26T14:18:11.039255+00:00",
+    "doc_id": "credit-policy-sme-loans",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/CREDIT/credit_policy_sme_loans.pdf"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Credit Policy \u2014 SME Working Capital & Term Loan\n Guidelines\n1. Borrower Eligibility\nMicro, Small, and Medium Enterprises (MSMEs) with a minimum operating track record of 3 years,\naudited balance sheets, and a Minimum Debt Service Coverage Ratio (DSCR) of 1.35x.\n2. Collateral & Security\nPrimary security: Hypothecation of stocks, receivables, and plant/machinery. Collateral coverage ratio\nmust be at least 125% of loan exposure for unassisted loans.\n3. Financial Covenants\nMinimum Current Ratio of 1.25x and Maximum Total Outside Liabilities to Tangible Net Worth\n(TOL/TNW) of 3.0x must be maintained throughout the tenure."
+    }
+  ]
+}

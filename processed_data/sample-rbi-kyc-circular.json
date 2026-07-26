@@ -1,0 +1,20 @@
+{
+  "doc_id": "sample-rbi-kyc-circular",
+  "metadata": {
+    "file_name": "sample_rbi_kyc_circular.txt",
+    "category": "RBI",
+    "date_added": "2026-07-26T14:18:11.058944+00:00",
+    "doc_id": "sample-rbi-kyc-circular",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/RBI/sample_rbi_kyc_circular.txt"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "RBI Master Direction \u2013 Know Your Customer (KYC) Norms (Excerpt)\n\n1. Objective\nRegulated entities (REs) shall establish a robust KYC framework to prevent banks from being used for money laundering or terrorist financing activities. Customer identification and verification must be completed before establishing a banking relationship.\n\n2. Customer Due Diligence (CDD)\nREs shall obtain and verify the identity of the customer using reliable, independent source documents or data. For individuals, officially valid documents (OVD) include passport, driving licence, Aadhaar (with consent and masking as applicable), and voter identity card.\n\n3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns."
+    },
+    {
+      "chunk_index": 1,
+      "text": "3. Periodic Updation\nKYC records shall be updated at least once every ten years for low-risk customers and at least once every eight years for high-risk customers. REs must maintain records of updation and monitor transactions for unusual patterns.\n\n4. Enhanced Due Diligence (EDD)\nEnhanced due diligence measures are mandatory for high-risk customers, politically exposed persons (PEPs), and non-face-to-face customer onboarding. EDD includes obtaining additional information on source of funds and purpose of relationship.\n\n5. Record Keeping\nREs shall maintain KYC documentation and transaction records for at least five years after the business relationship ends or the account is closed, whichever is later."
+    }
+  ]
+}

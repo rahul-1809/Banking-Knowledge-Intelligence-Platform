@@ -1,0 +1,16 @@
+{
+  "doc_id": "sop-retail-account-opening",
+  "metadata": {
+    "file_name": "sop_retail_account_opening.pdf",
+    "category": "SOP",
+    "date_added": "2026-07-26T14:18:11.062924+00:00",
+    "doc_id": "sop-retail-account-opening",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/SOP/sop_retail_account_opening.pdf"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Internal SOP \u2014 Retail Savings & Current Account Opening\n1. Objective & Application\nStandard operating procedure for verifying retail customer applications at branch counters and digital\nchannels.\n2. Verification Steps\nStaff must verify original OVDs against submitted copies, perform In-Person Verification (IPV) or Video\nKYC (V-CIP), and record customer consent.\n3. Risk Scoring & System Entry\nAssign initial risk rating (Low/Medium/High) in core banking based on customer profile, occupation, and\ngeographic location."
+    }
+  ]
+}

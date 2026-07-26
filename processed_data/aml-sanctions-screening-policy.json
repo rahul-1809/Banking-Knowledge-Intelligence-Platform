@@ -1,0 +1,16 @@
+{
+  "doc_id": "aml-sanctions-screening-policy",
+  "metadata": {
+    "file_name": "aml_sanctions_screening_policy.pdf",
+    "category": "COMPLIANCE",
+    "date_added": "2026-07-26T14:18:11.021053+00:00",
+    "doc_id": "aml-sanctions-screening-policy",
+    "source_path": "/Users/patnalarahul/Downloads/AdvRAG/DATA/COMPLIANCE/aml_sanctions_screening_policy.pdf"
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "text": "Compliance Policy \u2014 Anti-Money Laundering & Sanctions\n Screening\n1. Policy Statement\nThe Bank is committed to zero tolerance for money laundering, terrorist financing, and proliferation\nfinancing across all operating jurisdictions.\n2. Sanctions Screening\nAll outward and inward cross-border wire transfers, trade finance transactions, and new customer\nnames must be screened real-time against UN Security Council, OFAC, EU, and domestic sanctions\nlists.\n3. Suspicious Transaction Reporting (STR)\nTransactions flagged for unusual patterns, structurings, or red flags must be analyzed by the AML\nMonitoring Cell and reported to FIU-IND within 7 working days of confirmation."
+    }
+  ]
+}

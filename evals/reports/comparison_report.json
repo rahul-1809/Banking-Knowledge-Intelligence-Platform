@@ -1,0 +1,371 @@
+{
+  "timestamp": "2026-07-25 11:17:30",
+  "total_cases": 15,
+  "raw_qdrant_precision_at_5": 1.0,
+  "flashrank_precision_at_5": 1.0,
+  "precision_gain": 0.0,
+  "results": [
+    {
+      "id": "eval-001",
+      "question": "What are the officially valid documents (OVD) accepted for individual customer identification under RBI KYC norms?",
+      "expected_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-002",
+      "question": "What is the periodic KYC updation frequency for low-risk and high-risk banking customers?",
+      "expected_sources": [
+        "sample_rbi_kyc_circular.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_credit_policy.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_credit_policy.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-003",
+      "question": "What enhanced due diligence (EDD) measures are required for high-risk customers and politically exposed persons?",
+      "expected_sources": [
+        "sample_rbi_kyc_circular.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_credit_policy.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_credit_policy.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-004",
+      "question": "How long must regulated entities maintain KYC documentation and transaction records?",
+      "expected_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_credit_policy.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_credit_policy.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-005",
+      "question": "What are the eligibility criteria for a personal loan including age, income, and credit score?",
+      "expected_sources": [
+        "sample_credit_policy.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-006",
+      "question": "What is the maximum debt service coverage ratio (EMI to income limit) for personal loan underwriting?",
+      "expected_sources": [
+        "sample_credit_policy.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-007",
+      "question": "What is the maximum loan amount cap for personal loans relative to monthly income?",
+      "expected_sources": [
+        "sample_credit_policy.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-008",
+      "question": "Who has approval authority for personal loans above INR 5,00,000?",
+      "expected_sources": [
+        "sample_credit_policy.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-009",
+      "question": "What activities are prohibited regarding the use of personal loan proceeds?",
+      "expected_sources": [
+        "sample_credit_policy.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-0010",
+      "question": "What is the internal SOP procedure for handling Aadhaar details during customer verification?",
+      "expected_sources": [
+        "sample_kyc_verification_sop.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-0011",
+      "question": "What is the internal escalation timeframe and process when suspected forged documents or PEP indicators are identified?",
+      "expected_sources": [
+        "sample_kyc_verification_sop.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-0012",
+      "question": "What mandatory financial documents are required to apply for a personal loan?",
+      "expected_sources": [
+        "sample_credit_policy.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-0013",
+      "question": "Who must approve high-risk customer profiles before account activation according to the internal SOP?",
+      "expected_sources": [
+        "sample_kyc_verification_sop.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-0014",
+      "question": "What is the core objective of the RBI KYC framework for regulated entities?",
+      "expected_sources": [
+        "sample_rbi_kyc_circular.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_rbi_kyc_circular.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt",
+        "sample_credit_policy.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    },
+    {
+      "id": "eval-0015",
+      "question": "How long must branch staff maintain the verification checklist and audit trail for retail customer onboarding?",
+      "expected_sources": [
+        "sample_kyc_verification_sop.txt"
+      ],
+      "raw_top5_sources": [
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt"
+      ],
+      "raw_hit": true,
+      "reranked_top5_sources": [
+        "sample_kyc_verification_sop.txt",
+        "sample_kyc_verification_sop.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_rbi_kyc_circular.txt",
+        "sample_credit_policy.txt"
+      ],
+      "reranked_hit": true,
+      "reranker_used": false
+    }
+  ]
+}
