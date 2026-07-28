@@ -20,8 +20,8 @@ BKIP transforms unstructured banking documentation—including **RBI master dire
 - **NeMo Safety & Policy Guardrails**: Integrates NVIDIA NeMo Guardrails to intercept prompt injections, filter non-banking out-of-domain queries, and safeguard against PII leaks before retrieval occurs.
 - **Stateful Agentic Workflow**: Orchestrated using **LangGraph** with dynamic intent classification, conversational session memory (`MemorySaver`), and specialized planner/retriever/responder routing nodes.
 - **Two-Stage Precision Retrieval**: Combines high-speed **Qdrant Cloud** vector search with a CPU-optimized **FlashRank ONNX cross-encoder** (`ms-marco-MiniLM-L-6-v2`) for local reranking.
-- **Resilient Multi-Provider LLM Gateway**: Built on **Portkey Gateway** with automatic failover between primary models (`Llama 3.3 70B`) and fallback models (`Llama 3.1 8B`).
-- **Dual Telemetry & Observability**: Real-time end-to-end tracing powered by **Pydantic Logfire** and **LangSmith**.
+- **Resilient Portkey LLM Gateway**: Powered by **Portkey AI Gateway** with automated model fallbacks (`Llama 3.3 70B` -> `Llama 3.1 8B`), exponential backoff retries, request timeouts, simple response caching for Planner/Guardrails, and node-level metadata tagging.
+- **Dual Telemetry & Observability**: Real-time end-to-end tracing powered by **Portkey Dashboard**, **Pydantic Logfire**, and **LangSmith**.
 - **Continuous Evaluation Suite**: Integrated **RAGAS** benchmarking pipeline measuring Faithfulness, Answer Relevancy, Context Precision, and Context Recall with a dedicated Streamlit analytics dashboard.
 
 ---
@@ -56,16 +56,28 @@ flowchart TD
         K --> L
     end
 
-    subgraph "LLM & Observability Gateway"
-        K --> M["Portkey Gateway / Groq Primary"]
-        M -- "Failover" --> N["Groq Fallback LLM"]
-        M -. "Tracing" .-> O["Pydantic Logfire"]
-        M -. "Tracing" .-> P["LangSmith Engine"]
+    subgraph "Portkey LLM & Observability Gateway"
+        K --> M["Portkey Gateway / Groq Primary 70B"]
+        M -- "429 / Timeout Failover" --> N["Groq Fallback 8B LLM"]
+        M -. "Caching (Simple 1h/30m)" .-> O["Portkey Cache Engine"]
+        M -. "Node Metadata Tracing" .-> P["Portkey Logs / Logfire / LangSmith"]
     end
 
     L --> Q["Structured JSON Response"]
     Q --> B
 ```
+
+---
+
+## 🔑 Portkey Gateway Features Integrated
+
+| Feature | Implementation | Purpose & Benefit |
+|---|---|---|
+| **Automated Fallbacks** | Primary `Llama 3.3 70B` $\rightarrow$ Fallback `Llama 3.1 8B` | Guarantees continuous uptime during Groq rate limits (429) or model unavailability |
+| **Automatic Retries** | 3 attempts with exponential backoff on `[429, 500, 502, 503, 504]` | Handles temporary network blips or server errors without dropping user requests |
+| **Request Timeouts** | 30s limit on primary 70B model, 15s limit on fallback 8B model | Prevents hung API requests; HTTP `408` timeout status triggers instant fallback |
+| **Simple Response Caching** | 1-hour TTL for Planner node, 30-minute TTL for Guardrails | Eliminates LLM cost and reduces latency to <200ms for repeated intent & safety checks |
+| **Node Metadata Tagging** | Tags every request with `node` (`planner`/`responder`/`guardrail`), `thread_id`, `intent` | Enables end-to-end trace correlation and analytics in Portkey Dashboard |
 
 ---
 
@@ -79,8 +91,9 @@ flowchart TD
 | **Embeddings** | `sentence-transformers` | CPU-accelerated `BAAI/bge-small-en-v1.5` embeddings |
 | **Vector Store** | Qdrant Cloud | Cloud-native vector search with metadata filtering |
 | **Reranker** | FlashRank | Fast ONNX-based local cross-encoder reranking |
-| **LLM Engine** | Portkey Gateway + Groq | High-throughput `Llama 3.3 70B` & `Llama 3.1 8B` |
-| **Observability** | Pydantic Logfire + LangSmith | Structured telemetry, logging, and chain tracing |
+| **LLM Gateway** | Portkey AI Gateway | Resilient gateway routing, fallbacks, retries, caching, & metadata tagging |
+| **LLM Engine** | Groq Cloud | High-throughput `Llama 3.3 70B` & `Llama 3.1 8B` models |
+| **Observability** | Portkey + Logfire + LangSmith | Multi-tier structured telemetry, logging, and chain tracing |
 | **Evaluation** | RAGAS Framework | Grounding metrics & automated golden eval benchmarks |
 | **Frontend UI** | Streamlit | Executive compliance chat & eval metrics dashboard |
 
@@ -176,6 +189,7 @@ streamlit run evals/app.py
 | `GROQ_API_KEY` | Primary LLM | Yes | — | Groq Cloud API key for Llama 3.3 70B |
 | `GROQ_FALLBACK_API_KEY` | Fallback LLM | No | — | Secondary key for resilient model switching |
 | `PORTKEY_API_KEY` | LLM Gateway | No | — | Portkey routing gateway key |
+| `PORTKEY_CONFIG_ID` | LLM Gateway | No | — | Optional Portkey dashboard saved config ID (`pc-...`) |
 | `LOGFIRE_TOKEN` | Telemetry | No | — | Pydantic Logfire token |
 | `LANGCHAIN_TRACING_V2` | Telemetry | No | `false` | Enable LangSmith tracing (`true`/`false`) |
 | `LANGCHAIN_API_KEY` | Telemetry | No | — | LangSmith API key |

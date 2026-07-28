@@ -49,56 +49,84 @@ if "session_id" not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+def check_connection_statuses() -> dict[str, str]:
+    """Fetch live connection status for Portkey, LangSmith, Qdrant, Groq, and Logfire."""
+    base_url = os.getenv("BACKEND_URL", "http://localhost:8000")
+    statuses = {
+        "portkey": "Connected" if os.getenv("PORTKEY_API_KEY") else "Inactive",
+        "langsmith": "Connected" if (os.getenv("LANGSMITH_TRACING", "").lower() == "true" or os.getenv("LANGCHAIN_TRACING_V2", "").lower() == "true") and (os.getenv("LANGSMITH_API_KEY") or os.getenv("LANGCHAIN_API_KEY")) else "Inactive",
+        "qdrant": "Checking...",
+        "groq": "Connected" if os.getenv("GROQ_API_KEY") else "Inactive",
+        "logfire": "Connected" if os.getenv("LOGFIRE_TOKEN") else "Standby",
+    }
+    try:
+        res = requests.get(f"{base_url}/health", timeout=3)
+        if res.status_code == 200:
+            data = res.json()
+            q_status = data.get("qdrant", "unavailable")
+            statuses["qdrant"] = "Connected" if q_status == "connected" else "Unavailable"
+            if data.get("portkey") == "connected":
+                statuses["portkey"] = "Connected"
+            if data.get("groq") == "connected":
+                statuses["groq"] = "Connected"
+            if data.get("logfire") == "active":
+                statuses["logfire"] = "Connected"
+            if data.get("langsmith") == "active":
+                statuses["langsmith"] = "Connected"
+    except Exception:
+        statuses["qdrant"] = "Unavailable (Backend Offline)"
+    return statuses
+
 # --- SIDEBAR ---
 with st.sidebar:
-    st.title("🧠 Agent OS")
+    st.title("BKIP")
     st.markdown("---")
-    st.success(f"Logfire: {LOGFIRE_STATUS}")
-    st.info(f"Memory ID: {st.session_state.session_id[:8]}")
 
-    if st.button("🗑️ Clear History & Memory", use_container_width=True, type="primary"):
-        logfire.warn(f"🗑️ Memory Wipe Triggered for session: {st.session_state.session_id}")
+    st.markdown("### System Connections")
+    conn = check_connection_statuses()
+    
+    st.markdown(f"- **Portkey**: {'Connected' if conn['portkey'] == 'Connected' else 'Inactive'}")
+    st.markdown(f"- **LangSmith**: {'Connected' if conn['langsmith'] == 'Connected' else 'Inactive'}")
+    st.markdown(f"- **Qdrant**: {conn['qdrant']}")
+    st.markdown(f"- **Groq**: {'Connected' if conn['groq'] == 'Connected' else 'Inactive'}")
+    st.markdown(f"- **Logfire**: {'Connected' if conn['logfire'] == 'Connected' else 'Standby'}")
+
+    if st.button("Clear History & Memory", use_container_width=True, type="primary"):
+        logfire.warn(f"Memory Wipe Triggered for session: {st.session_state.session_id}")
         st.session_state.messages = []
         st.session_state.session_id = str(uuid.uuid4())
         st.rerun()
 
     st.markdown("---")
-    st.markdown("### 📥 Ingest Document")
+    st.markdown("### Ingest Document")
     uploaded_file = st.file_uploader(
         "Upload file to ingest & index",
         type=["pdf", "txt", "docx", "json", "md"],
         help="Upload PDF, TXT, DOCX, JSON, or MD documents into the vector database for RAG retrieval.",
     )
-    custom_cat = st.text_input(
-        "Category (Optional)",
-        placeholder="e.g. RBI, SOP, CUSTOM",
-        help="Optional category metadata for document indexing.",
-    )
 
     if uploaded_file is not None:
-        if st.button("⚡ Ingest & Index File", use_container_width=True):
+        if st.button("Ingest & Index File", use_container_width=True):
             with st.spinner(f"Parsing, embedding & indexing '{uploaded_file.name}'..."):
                 try:
                     base_url = os.getenv("BACKEND_URL", "http://localhost:8000")
                     url = f"{base_url}/ingest"
                     files = {"file": (uploaded_file.name, uploaded_file.getvalue(), uploaded_file.type or "application/octet-stream")}
                     data_form = {}
-                    if custom_cat.strip():
-                        data_form["category"] = custom_cat.strip()
 
                     res = requests.post(url, files=files, data=data_form, timeout=120)
                     res.raise_for_status()
                     ingest_res = res.json()
 
                     st.success(
-                        f"✅ **Ingested {ingest_res.get('file_name')}**!\n\n"
+                        f"**Ingested {ingest_res.get('file_name')}**!\n\n"
                         f"- Chunks: `{ingest_res.get('chunks_ingested')}`\n"
                         f"- Category: `{ingest_res.get('category')}`"
                     )
-                    logfire.info(f"📥 File ingested via UI: {uploaded_file.name}")
+                    logfire.info(f"File ingested via UI: {uploaded_file.name}")
                 except Exception as exc:
-                    st.error(f"❌ Ingestion Error: {exc}")
-                    logfire.error(f"❌ File ingestion failed: {exc}")
+                    st.error(f"Ingestion Error: {exc}")
+                    logfire.error(f"File ingestion failed: {exc}")
 
 # --- MAIN CHAT ---
 st.title("🤖 Enterprise Agentic Assistant")

@@ -9,6 +9,16 @@ from app.ingestion.loaders.txt_loader import load_txt
 from app.ingestion.loaders.json_loader import load_json
 
 
+EXCLUDED_FILENAMES = {
+    "readme.md",
+    "architecture.md",
+    "plan.md",
+    "walkthrough.md",
+    "implementation_plan.md",
+    "license",
+}
+
+
 def load_document(file_path: Path, data_root: Path) -> LoadedDocument:
     suffix = file_path.suffix.lower()
     if suffix == ".pdf":
@@ -25,6 +35,11 @@ def load_document(file_path: Path, data_root: Path) -> LoadedDocument:
 def discover_documents(data_dir: Path) -> list[Path]:
     files: list[Path] = []
     for path in sorted(data_dir.rglob("*")):
-        if path.is_file() and path.suffix.lower() in SUPPORTED_EXTENSIONS:
+        if (
+            path.is_file()
+            and path.name.lower() not in EXCLUDED_FILENAMES
+            and path.suffix.lower() in SUPPORTED_EXTENSIONS
+        ):
             files.append(path)
     return files
+

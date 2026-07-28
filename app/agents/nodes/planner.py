@@ -13,7 +13,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from app.agents.state import AgentState
 from app.core.logging import get_logger
 from app.core.tracing import get_langsmith_callbacks
-from app.gateway.llm_client import get_primary_llm
+from app.gateway.llm_client import get_planner_llm
 
 logger = get_logger(__name__)
 
@@ -41,9 +41,10 @@ def planner_node(state: AgentState) -> dict:
     ``state["query"]``) and calls the primary LLM to output a single intent
     label.  Appends a reasoning entry to ``thought_process``.
 
-    Phase 5: Full Logfire tracing + LangSmith callback wired to LLM call.
+    Phase 5: Full Logfire tracing + LangSmith callback + Portkey metadata/caching.
     """
     query = state.get("query", "")
+    thread_id = state.get("thread_id", "")
     thought_process = list(state.get("thought_process", []))
 
     with logfire.span(
@@ -59,7 +60,8 @@ def planner_node(state: AgentState) -> dict:
             HumanMessage(content=query),
         ]
 
-        llm = get_primary_llm()
+        metadata = {"node": "planner", "thread_id": thread_id}
+        llm = get_planner_llm(metadata=metadata)
         callbacks = get_langsmith_callbacks()
         response = llm.invoke(messages, config={"callbacks": callbacks})
         raw_label = response.content.strip().upper()
@@ -85,3 +87,4 @@ def planner_node(state: AgentState) -> dict:
         "intent": intent,
         "thought_process": thought_process,
     }
+

@@ -189,7 +189,7 @@ def _llm_gate(query: str) -> Optional[GuardResult]:
     """
     with logfire.span("guardrail.llm_gate", query_preview=query[:60]):
         try:
-            llm = get_guard_llm()
+            llm = get_guard_llm(metadata={"node": "guardrail"})
             messages = [
                 SystemMessage(content=_GATE_SYSTEM_PROMPT),
                 HumanMessage(content=query),
@@ -213,6 +213,7 @@ def _llm_gate(query: str) -> Optional[GuardResult]:
             logfire.warn("guardrail.llm_gate.error", error=str(exc))
 
     return None
+
 
 
 # ── Public guard() function ───────────────────────────────────────────────────

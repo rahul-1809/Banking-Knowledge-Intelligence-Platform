@@ -28,7 +28,46 @@ def slugify(value: str) -> str:
     return slug or "document"
 
 
+# Ordered keyword -> category mapping used when the folder hierarchy is unavailable
+_KEYWORD_CATEGORY_MAP: list[tuple[str, str]] = [
+    # RBI
+    ("RBI", "RBI"),
+    # Compliance / AML / KYC
+    ("AML", "COMPLIANCE"),
+    ("SANCTION", "COMPLIANCE"),
+    ("FRAUD", "COMPLIANCE"),
+    ("KYC", "COMPLIANCE"),
+    # Audit
+    ("AUDIT", "AUDIT"),
+    ("INSPECTION", "AUDIT"),
+    ("OPERATIONAL_RISK", "AUDIT"),
+    ("RISK_MATRIX", "AUDIT"),
+    # Treasury
+    ("TREASURY", "TREASURY"),
+    ("ALM", "TREASURY"),
+    ("LIQUIDITY", "TREASURY"),
+    ("INVESTMENT", "TREASURY"),
+    # Credit
+    ("CREDIT", "CREDIT"),
+    ("MORTGAGE", "CREDIT"),
+    ("LOAN", "CREDIT"),
+    ("SME", "CREDIT"),
+    # SOP
+    ("SOP", "SOP"),
+    ("POLICY", "SOP"),
+]
+
+
 def infer_category(file_path: Path, data_root: Path) -> str:
+    """Infer document category.
+
+    Priority:
+      1. Parent folder name inside data_root (most reliable).
+      2. Keyword matching on the filename stem (fallback for uploads
+         that land outside the DATA/ folder hierarchy).
+      3. 'GENERAL' as last resort.
+    """
+    # 1. Folder-based inference (highest confidence)
     try:
         relative = file_path.relative_to(data_root)
         if len(relative.parts) > 1:
@@ -36,10 +75,12 @@ def infer_category(file_path: Path, data_root: Path) -> str:
     except ValueError:
         pass
 
-    name = file_path.stem.upper()
-    for token in ("RBI", "SOP", "KYC", "AML", "CREDIT", "POLICY"):
-        if token in name:
-            return token if token != "POLICY" else "SOP"
+    # 2. Keyword-based inference on the normalised filename
+    name = file_path.stem.upper().replace("-", "_").replace(" ", "_")
+    for keyword, category in _KEYWORD_CATEGORY_MAP:
+        if keyword in name:
+            return category
+
     return "GENERAL"
 
 

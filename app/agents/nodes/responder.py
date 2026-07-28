@@ -13,7 +13,7 @@ from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from app.agents.state import AgentState
 from app.core.logging import get_logger
 from app.core.tracing import get_langsmith_callbacks
-from app.gateway.llm_client import get_primary_llm
+from app.gateway.llm_client import get_responder_llm
 
 logger = get_logger(__name__)
 
@@ -70,9 +70,10 @@ def responder_node(state: AgentState) -> dict:
     LangGraph's ``add_messages`` reducer updates the conversation history, and
     ``MemorySaver`` persists it across turns.
 
-    Phase 5: Full Logfire tracing + LangSmith callback wired to LLM call.
+    Phase 5: Full Logfire tracing + LangSmith callback + Portkey metadata.
     """
     query = state.get("query", "")
+    thread_id = state.get("thread_id", "")
     intent = state.get("intent", "BANKING_POLICY_QUERY")
     documents = state.get("documents", [])
     thought_process = list(state.get("thought_process", []))
@@ -83,7 +84,8 @@ def responder_node(state: AgentState) -> dict:
         docs_count=len(documents),
         query_preview=query[:80],
     ) as span:
-        llm = get_primary_llm()
+        metadata = {"node": "responder", "intent": intent, "thread_id": thread_id}
+        llm = get_responder_llm(metadata=metadata)
         callbacks = get_langsmith_callbacks()
         t0 = time.perf_counter()
 
@@ -134,3 +136,4 @@ def responder_node(state: AgentState) -> dict:
         "messages": [AIMessage(content=answer_text)],
         "thought_process": thought_process,
     }
+

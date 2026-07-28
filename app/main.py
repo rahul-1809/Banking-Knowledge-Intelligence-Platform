@@ -159,6 +159,8 @@ def create_app() -> FastAPI:
             "qdrant": qdrant_status,
             "version": "0.5.0",
             "gateway": "portkey" if settings.portkey_api_key else "direct_groq",
+            "portkey": "connected" if settings.portkey_api_key else "inactive",
+            "groq": "connected" if settings.groq_api_key else "inactive",
             "logfire": "active" if settings.logfire_token else "inactive",
             "langsmith": "active" if bool(_ls_key and _ls_tracing) else "inactive",
         }
